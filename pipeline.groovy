@@ -53,9 +53,8 @@ sh '''/opt/maven/bin/mvn sonar:sonar  -Dsonar.projectKey=student_app -Dsonar.hos
         }
       stage('Quality-gate') {
         steps {
-        timeout(10) {
-    }
-        waitForQualityGate abortPipeline: true
+        timeout(time: 10, unit: 'MINUTES') {
+            waitForQualityGate abortPipeline: true
       }
     }
         stage('Deploy') {
