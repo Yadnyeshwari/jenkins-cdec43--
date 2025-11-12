@@ -50,9 +50,9 @@ pipeline {
                  sh '/opt/maven/bin/mvn sonar:sonar'
               }
                //withCredentials([string(credentialsId: 'sonar-cred', variable: 'sonar')]) {
- sh '''/opt/maven/bin/mvn sonar:sonar  -Dsonar.projectKey=student_app -Dsonar.host.url=http://172.31.6.67:9000 -Dsonar.login=c87fdd896bbf919cc1557de119e018b6c8556c07'''           
-             }
-        }
+ sh '''/opt/maven/bin/mvn sonar:sonar  -Dsonar.projectKey=student_app -Dsonar.host.url=http://172.31.6.67:9000 -Dsonar.login=c87fdd896bbf919cc1557de119e018b6c8556c07'''
+            }
+          }
         }
       stage('Quality-gate') {
         steps {
