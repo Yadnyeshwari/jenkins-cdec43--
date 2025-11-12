@@ -50,7 +50,7 @@ pipeline {
                  sh '/opt/maven/bin/mvn sonar:sonar'
               }
                //withCredentials([string(credentialsId: 'sonar-cred', variable: 'sonar')]) 
- sh '''/opt/maven/bin/mvn sonar:sonar  -Dsonar.projectKey=student_app -Dsonar.host.url=http://16.171.61.169:9000 -Dsonar.login=c87fdd896bbf9109cc1557de119e018b6c8556c07'''
+ sh '''/opt/maven/bin/mvn sonar:sonar  -Dsonar.projectKey=student_app -Dsonar.host.url=http://172.31.6.67:9000 -Dsonar.login=565af3a2273c8eb65381e3762951d69511f57bf5'''
             }
         }
       stage('Quality-gate') {
