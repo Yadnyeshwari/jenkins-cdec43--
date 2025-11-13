@@ -61,6 +61,11 @@ pipeline {
           waitForQualityGate true
     }
   }
+      stage('s3-Artifactory') {
+        steps {
+          sh 'aws s3 cp target/studentapp-2.2-SNAPSHOT.war s3://s3-jen-buck'
+        }
+      }
         stage('Deploy') {
             steps {
                 echo "deploy-sucess"
